@@ -13,8 +13,6 @@ public class lol {
     static void  RailFenceMenu () {
         Scanner in = new Scanner(System.in);
         String Answer = "0";
-        String Ask = "3";
-        while (!Answer.equals(Ask)){
             System.out.println("1. Зашифровать сообщение");
             System.out.println("2. Расшифровать сообщение");
             System.out.println("3. Выход");
@@ -36,7 +34,7 @@ public class lol {
                     RailFence.uncoding();
                     RailFence.show(); break;}
             }
-        }
+
     }
 
     static void  ColumnMethodMenu () {
@@ -109,24 +107,14 @@ public class lol {
                 case "1": { CardanGrilleCipher CardanGrille = new CardanGrilleCipher();
                     System.out.print("Введите Исходный текст: ");
                     CardanGrille.setOriginalText(in.nextLine());
-                    System.out.println("1. Ввести таблицу");
-                    System.out.println("2. Ввести ключ");
-                    switch (Answer = Choice()){
-                        case "1" : { CardanGrille.setKey(); break;}
-                        case "2" : { System.out.print("Введите размерность ключа: ");CardanGrille.GenerateKey(in.nextInt()); break;}
-                    }
+                    CardanGrille.setKey();
                     CardanGrille.coding();
                     CardanGrille.show();
                     CardanGrille.reset(); break;}
                 case "2": { CardanGrilleCipher CardanGrille = new CardanGrilleCipher();
                     System.out.print("Введите зашифрованный текст: ");
                     CardanGrille.setCipherText(in.nextLine());
-                    System.out.println("1. Ввести таблицу");
-                    System.out.println("2. Ввести ключ");
-                    switch (Answer = Choice()){
-                        case "1" : { CardanGrille.setKey(); break;}
-                        case "2" : { System.out.print("Введите размерность ключа: ");CardanGrille.GenerateKey(in.nextInt()); break;}
-                    }
+                    CardanGrille.setKey();
                     CardanGrille.uncoding();
                     CardanGrille.show();
                     CardanGrille.reset(); break;}
